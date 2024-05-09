@@ -18,6 +18,10 @@
           "type": "boolean",
           "description": "Indicates to continue a previously failed build attempt"
         },
+        "GitHubToken": {
+          "type": "string",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
+        },
         "Help": {
           "type": "boolean",
           "description": "Shows the help text for this build assembly"
@@ -62,6 +66,10 @@
             "type": "string"
           }
         },
+        "PublicNuGetApiKey": {
+          "type": "string",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
+        },
         "Root": {
           "type": "string",
           "description": "Root directory during build execution"
@@ -74,8 +82,11 @@
             "enum": [
               "Clean",
               "Compile",
+              "Pack",
               "Print",
-              "Restore"
+              "Publish",
+              "Restore",
+              "Test"
             ]
           }
         },
@@ -91,8 +102,11 @@
             "enum": [
               "Clean",
               "Compile",
+              "Pack",
               "Print",
-              "Restore"
+              "Publish",
+              "Restore",
+              "Test"
             ]
           }
         },

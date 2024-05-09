@@ -28,8 +28,9 @@ using static Nuke.Common.IO.PathConstruction;
     GitHubActionsImage.UbuntuLatest,
     AutoGenerate = false,
     FetchDepth = 0,
-    OnPushBranches = new[] { "*" },
-    InvokedTargets = new[] { nameof(ITest.Test), nameof(IPack.Pack) },
+    OnPushBranches = ["*"],
+    OnPullRequestBranches = [ "*" ],
+    InvokedTargets = [nameof(ITest.Test), nameof(IPack.Pack)],
     EnableGitHubToken = true,
     PublishArtifacts = false
 
@@ -66,7 +67,6 @@ class Build : NukeBuild
     [CanBeNull] GitHubActions GitHubActions => GitHubActions.Instance;
     
     [Parameter] [Secret] readonly string PublicNuGetApiKey;
-    [Parameter] [Secret] readonly string FeedzNuGetApiKey;
     [Parameter] [Secret] readonly string GitHubToken;
 
     Target Print => _ => _
@@ -74,13 +74,13 @@ class Build : NukeBuild
         {
             if (GitHubActions is not null)
             {
-
                 Log.Information("Branch = {Branch}", GitHubActions.Ref);
                 Log.Information("Commit = {Commit}", GitHubActions.Sha);
             }
         });
 
     Target Clean => _ => _
+        .DependsOn(Print)
         .Executes(() =>
         {
             ArtifactsDirectory.CreateOrCleanDirectory();
@@ -127,10 +127,11 @@ class Build : NukeBuild
         {
             DotNetTasks.DotNetPack(s => s
                 .SetProject(Solution)
-                .SetConfiguration(Configuration)
+                // .SetConfiguration(Configuration)
                 .SetOutputDirectory(ArtifactsDirectory)
                 .SetVersion(GitVersion.NuGetVersionV2)
-                .EnableNoBuild());
+                // .EnableNoBuild())
+              );
         });
     
     Target Publish => _ => _

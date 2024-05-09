@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.FakeLogging", "src\FluentAssertions.FakeLogging.csproj", "{05834D68-AE5E-4A7E-A442-97A9305C5890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.FakeLogging.Specs", "tests\FluentAssertions.FakeLogging.Specs.csproj", "{18994CBB-91A2-443F-8DC0-980178EA0AD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_SolutionItems", "{E98A71D3-0994-4550-A80F-2A4ED2FCCDA7}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Build.props = Directory.Build.props
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{A86FFB34-6462-4EF9-A924-3BD419BC1217}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A86FFB34-6462-4EF9-A924-3BD419BC1217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86FFB34-6462-4EF9-A924-3BD419BC1217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05834D68-AE5E-4A7E-A442-97A9305C5890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05834D68-AE5E-4A7E-A442-97A9305C5890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05834D68-AE5E-4A7E-A442-97A9305C5890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05834D68-AE5E-4A7E-A442-97A9305C5890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18994CBB-91A2-443F-8DC0-980178EA0AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18994CBB-91A2-443F-8DC0-980178EA0AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18994CBB-91A2-443F-8DC0-980178EA0AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18994CBB-91A2-443F-8DC0-980178EA0AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

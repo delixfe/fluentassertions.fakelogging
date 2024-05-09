@@ -26,12 +26,15 @@ using static Nuke.Common.IO.PathConstruction;
 [GitHubActions(
     "ci",
     GitHubActionsImage.UbuntuLatest,
+    AutoGenerate = false,
     FetchDepth = 0,
     OnPushBranches = new[] { "*" },
     InvokedTargets = new[] { nameof(ITest.Test), nameof(IPack.Pack) },
     EnableGitHubToken = true,
     PublishArtifacts = false
+
     // ImportSecrets = new[] { nameof(FeedzNuGetApiKey) })
+    
     )]
 class Build : NukeBuild
 {
